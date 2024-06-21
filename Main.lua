@@ -81,6 +81,7 @@ local RunService = game:GetService("RunService")
 local GuiService = game:GetService("GuiService")
 local Workspace = game:GetService("Workspace")
 --
+print("hello")
 -- // Functions
 function library:TweenDrawing(Render, RenderInfo, RenderTo)
     local Start = {}
