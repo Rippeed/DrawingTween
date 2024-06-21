@@ -113,3 +113,5 @@ function library:TweenDrawing(Render, RenderInfo, RenderTo)
         end
     end)
 end
+
+return library
