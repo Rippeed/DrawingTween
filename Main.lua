@@ -1,4 +1,8 @@
+local library = {}
+library.__index = library
+
 local LerpCIELUV
+
 --
 do -- CIELUV color space lerping
 	-- Combines two colors in CIELUV space.
@@ -78,7 +82,7 @@ local GuiService = game:GetService("GuiService")
 local Workspace = game:GetService("Workspace")
 --
 -- // Functions
-function TweenDrawing(Render, RenderInfo, RenderTo)
+function library:TweenDrawing(Render, RenderInfo, RenderTo)
     local Start = {}
     local CurrentTime = 0
     --
@@ -109,18 +113,3 @@ function TweenDrawing(Render, RenderInfo, RenderTo)
         end
     end)
 end
--- // Connections
--- // Example
-local Box = Drawing.new("Square")
-Box.Position = Vector2.new((Workspace.CurrentCamera.ViewportSize.X / 2) - 50, (Workspace.CurrentCamera.ViewportSize.Y / 2)  - 50)
-Box.Filled = true
-Box.Transparency = 0.5
-Box.Visible = true
-Box.Size = Vector2.new(100, 100)
---
-task.wait(1)
---
-TweenDrawing(Box, TweenInfo.new(0.5, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Transparency = 1, Color = Color3.fromRGB(255, 0, 0), Size = Vector2.new(50, 50), Position = Vector2.new((Workspace.CurrentCamera.ViewportSize.X / 2) - 25, (Workspace.CurrentCamera.ViewportSize.Y / 2)  - 25)})
---
-task.wait(1)
-Box:Remove()
